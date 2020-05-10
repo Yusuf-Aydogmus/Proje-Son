@@ -1,0 +1,3 @@
+Sabise yükleme boyutunu aştığı için rapor dökümanı sabise yüklenememiştir.
+Bu nedenle Github'a yüklenmiştir.Değerlendirmeye almanız temennisiyle.
+Github Linki:

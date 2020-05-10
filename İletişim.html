@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Yatay Menü</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width-device-width , initial-scale-1 , maximum-scale-1 ">
+      
+      <link rel="stylesheet" type="text/css" media="screen" href="css/fontawesome.min.css"/>
+      
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+  
+      <link rel="stylesheet" type="text/css" href="css/stilim.css"/>
+      
+      
+      
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+
+      <script>
+      function isValid(frm){
+          
+          var ad=frm.adi.value;
+          var soyad=frm.soyadi.value;
+          var email=frm.email.value;
+          var atpos=email.indexOf("@");
+        var dotpos=email.lastIndexOf(".");
+          
+          if(ad == null || ad=="")
+              {
+                  alert("Ad boş bırakılamaz");
+                  return false;
+              }
+          
+           if(soyad == null || soyad=="")
+              {
+                  alert("Soyad boş bırakılamaz");
+                  return false;
+              }
+          if ( atpos<1 || dotpos<atpos+2 || dotpos+2>=email.length )
+    {
+        alert("Geçerli email adresi girin");
+        return false;
+    }      
+          return true;
+          
+          
+          
+      }
+      
+      </script>
+
+    
+       
+      
+    </head>
+    
+    <body id="iletisimGovde">
+        <div class="container" id="kapsayan">
+                <div class="row">
+                        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
+                  <a class="navbar-brand " href="#" ><img class="ResimTip1" src="Resimler/yeni.gif" height="30px" width="150px"></a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+
+                  <div class="collapse navbar-collapse  " id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto ">
+                      <li class="nav-item active">
+                        <a class="nav-link" href="Hakk%C4%B1nda.html">Hakkında <span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="%C3%96zge%C3%A7mi%C5%9F.html">Özgeçmiş</a>
+                      </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="%C5%9Eehrim.html">Şehrim</a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link " href="Miras%C4%B1m%C4%B1z.html" > Mirasımız</a>
+                         
+                        </li>
+                      
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="Login.html">Login</a>
+                      </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="%C4%B0leti%C5%9Fim.html">İletişim</a>
+                      </li>
+
+                    </ul>
+
+                  </div>
+                </nav>
+                    </div>  
+            </div>    
+        
+        
+        <div class="container" id="iletisimContainer">
+        <tr height ="320">
+
+            <td width ="70%" valign="top">
+
+        <h2>İLETİŞİM</h2> <hr><br>
+<form name="uye_formu" action="iletisim.php" onsubmit="return isValid(this)"  method="POST"> 
+
+<table cellpadding="8"> 
+ 
+<tr>
+<td><b>ADI</b></td>
+<td>:</td>
+<td><input type = "text" name="adi" autocomplete="off" ></td>
+</tr>
+
+<tr>
+<td><b>SOYADI</b></td>
+<td>:</td>
+<td><input type = "text" name="soyadi" autocomplete="off" ></td>
+</tr>
+
+
+
+
+<tr>
+<td><b>ELEKTRONİK POSTA</b></td>
+<td>:</td>
+<td><input type = "email" name="email" autocomplete="off" ></td>
+</tr>
+ 
+<tr>
+<td><b>CİNSİYETİ</b></td>
+<td>:</td>
+<td>
+
+<input type = "radio" name="cinsiyet" value="BELİRTİLMEMİŞ" checked hidden >
+<input type = "radio" name="cinsiyet" value="ERKEK">ERKEK
+<input type = "radio" name="cinsiyet" value="KADIN">KADIN
+</td>
+
+</tr>
+       
+<!--     
+required işlemi zorunlu yapar
+<input type = "radio" name="cinsiyet" value="XXXX" checked hidden >
+gizili bir tane radio button var ve hiç bir şey işaretlenmezse bu default olarak işaretli
+
+
+-->
+<tr>
+<td valign="top"><b>İRTİBAT SEBEBİ/SEBEPLERİ</b></td>
+<td valign="top">:</td>
+<td>
+<input type = "checkbox" name="sikayet" value="ŞİKAYET">Şikayet <br>
+<input type = "checkbox" name="bilgi" value="BİLGİ">Bilgi<br>
+<input type = "checkbox" name="soru" value="SORU">Soru<br>
+<input type = "checkbox" name="dilek" value ="DİLEK">Dilek-İstek<br>
+<input type = "checkbox" name="diger" value="DİGER">Diğer<br>
+</td>
+
+</tr>
+
+<tr>
+<td valign="top"><b>YAŞADIĞI İL</b></td>
+<td valign="top">:</td>
+<td>
+<select name="sehir">
+<option value="-">SEÇİNİZ</option>
+<option value="SAKARYA">SAKARYA</option>
+<option value="İSTANBUL">İSTANBUL</option>
+<option value="RİZE">RİZE</option>
+<option value="BAYBURT" >BAYBURT</option>
+
+</select>
+</td>
+</tr>
+
+
+
+
+
+
+<tr>
+<td valign="top" rows="20" cols="90"  name="mesaj"><b>MESAJINIZ </b></td>
+<td valign="top">:</td>
+<td>
+<textarea ></textarea>
+
+</td>
+</tr>
+
+
+<tr>
+<td><b>DOSYA SEC</b></td>
+<td>:</td>
+<td><input type = "file" name="dosya" multiple ></td>
+</tr>
+
+
+
+
+<tr>
+<td colspan ="3">
+<input name="gonder" type = "submit" value="GÖNDER">
+<input type = "reset" value="TEMİZLE">
+
+</td>
+
+
+</tr>
+
+</table>
+</form>
+
+
+</td>
+</tr>
+        
+        </div> 
+        
+      
+        
+    <footer>
+            <div  class="container-fluid" id="footerContainer">
+
+                <div class="footerBox">
+                
+                    <h1>YUSUF</h1>
+                    <a href="https://www.facebook.com/web.teknolojileri.56" target="_blank" title="facebook"><img class="ResimTip1" src="Resimler/facebook.png"></a>
+                     <a href="https://twitter.com/WebTekno7"><img  class="ResimTip1" src="Resimler/twitter.png"></a>
+                    <a href="https://www.instagram.com/webtekno54/?hl=tr"><img class="ResimTip1" src="Resimler/instagram.png"></a>
+                    <a href="https://www.youtube.com/channel/UCIRuk4-9DIlfG39HfhoStMw?view_as=subscriber"><img class="ResimTip1" src="Resimler/youtube.png"></a>
+                </div>
+                <div class="footerBox">
+                
+                    <h2><a class="footerLink" href="%C4%B0leti%C5%9Fim.html">BİZE ULAŞIN</a></h2>
+                    <p><span style="color:black"> Tel</span> : (0 312) 441 53 67 </p>
+                    <p><span style="color: black"> Email</span> : info@site.com </p>
+                    <p><span style="color: black"> Web </span> : www.site.com </p>
+                    <p><span style="color: black"> Adres </span> : Hilal Mahallesi 677.Sokak </p>
+                </div>
+                <div class="footerBox">
+                 
+                    <h2><a class="footerLink" href="https://www.youtube.com/channel/UCIRuk4-9DIlfG39HfhoStMw?view_as=subscriber">ABONE OL</a></h2>
+                    <p>Bu Site Yusuf Aydoğmuş tarafından Web Teknolojiler Dersi Proje ödevi kapsamında oluşuturulmuştur.<br>&copy; Her Hakkı Saklıdır.</p>
+                    
+                </div>
+            
+            
+                <div style="clear: left;"></div>
+            
+            </div>
+           
+                         
+        </footer>
+        
+      
+                
+
+       <script src="js/jquery-3.5.0.slim.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>>
+    
+    
+    
+    
+    </body>
+</html>
